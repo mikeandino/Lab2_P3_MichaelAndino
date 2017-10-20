@@ -17,12 +17,12 @@ int main(){
 }
 
 void menu(){
+	int opcion=0;
 	do {
 		cout <<"Laboratorio 2 Programacion 3"<<endl
 			 <<"	1. Numeros Primos."<<endl
 		 	<<" 	2. Numeros Multiplos."<<endl
 		 	<<" 	3. Conjetura Goldbach."<<endl;
-		int opcion;
 		cin >> opcion;
 		switch (opcion) {
 			case 1:{
@@ -45,7 +45,7 @@ void menu(){
 					cout<<"Ingresa un numero menor que 150: ";
 					cin>>num;
 					while(num>150||num<1) {
-						cout<endl<<"Numero Invalido: ";
+						cout<<endl<<"Numero Invalido: ";
 						cin>>num;
 					}
 					goldbach(num);
@@ -60,8 +60,8 @@ void menu(){
 	} while (opcion!=4);
 }
 
-int primos(){
-	cout<<"Ingrese el numero: "
+void primos(){
+	cout<<"Ingrese el numero: ";
 	int numero;
 	cin>>numero;
 	cout<<endl;
@@ -71,7 +71,17 @@ int primos(){
 			cont++;
 		}
 	}
-	cout<<"La suma de los numero primos menor de "+numero+" es: "+cont<<endl;
+	cout<<"La suma de los numero primos menor de "<<numero<<" es: "<<cont<<endl;
 }
 
-bool primo
+bool primo(int n){
+
+}
+
+int multiplos(int a, int b, int n){
+
+}
+
+int goldbach(int num){
+
+}
