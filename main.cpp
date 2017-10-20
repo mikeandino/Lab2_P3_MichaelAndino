@@ -59,3 +59,11 @@ void menu(){
 		}
 	} while (opcion!=4);
 }
+
+int primos(){
+	cout<<"Ingrese el numero: "
+	int numero;
+	cin>>numero;
+		cout<<endl;
+	
+}
