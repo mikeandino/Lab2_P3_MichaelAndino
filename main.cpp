@@ -64,6 +64,14 @@ int primos(){
 	cout<<"Ingrese el numero: "
 	int numero;
 	cin>>numero;
-		cout<<endl;
-	
+	cout<<endl;
+	int cont=1;
+	for (int i= 2; i < numero ; i++) {
+		if (primo(i)) {
+			cont++;
+		}
+	}
+	cout<<"La suma de los numero primos menor de "+numero+" es: "+cont<<endl;
 }
+
+bool primo
