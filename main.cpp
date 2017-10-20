@@ -13,17 +13,21 @@ int goldbach(int);
 bool primo(int);
 
 int main(){
-
+	menu();
+	return 0;
 }
 
 void menu(){
-	int opcion=0;
+	int opcion = 0;
 	do {
 		cout <<"Laboratorio 2 Programacion 3"<<endl
 			 <<"	1. Numeros Primos."<<endl
-		 	<<" 	2. Numeros Multiplos."<<endl
-		 	<<" 	3. Conjetura Goldbach."<<endl;
+		 	 <<" 	2. Numeros Multiplos."<<endl
+		 	 <<" 	3. Conjetura Goldbach."<<endl
+			 <<"	4. Salir."<<endl
+			 <<"	Ingresa opcion: ";
 		cin >> opcion;
+		cout<<endl;
 		switch (opcion) {
 			case 1:{
 					primos();
@@ -64,23 +68,28 @@ void primos(){
 	cout<<"Ingrese el numero: ";
 	int numero;
 	cin>>numero;
-	cout<<endl;
-	int cont=1;
-	for (int i= 2; i < numero ; i++) {
+	int cont=0;
+	for (int i=1; i < numero ; i++) {
 		if (primo(i)) {
-			cont++;
+			cont+=i;
 		}
 	}
 	cout<<"La suma de los numero primos menor de "<<numero<<" es: "<<cont<<endl;
 }
 
 bool primo(int n){
-	for (int i=2; i < n ; i++) {
+	int cont=0;
+	for (int i=1; i <=n ; i++) {
 		if (n%i==0) {
-			return false;
+			cont++;
 		}
 	}
-	return true;
+	cout<<endl;
+	if (cont==2) {
+		return true;
+	}else{
+		return false;
+	}
 }
 
 int multiplos(int a, int b, int n){
