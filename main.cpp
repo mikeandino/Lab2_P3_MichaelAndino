@@ -28,33 +28,33 @@ void menu(){
 			 <<"	Ingresa opcion: ";
 		cin >> opcion;
 		cout<<endl;
-		switch (opcion) {
+		switch (opcion){
 			case 1:{
 					primos();
-				}			
-				break;
+					break;
+				};			
 			case 2:{
 					int a,b,n;
-					cout<<"Ingrese el primer valor";
+					cout<<"Ingrese el primer valor: ";
 					cin>>a;
 					cout<<endl<<"Ingrese el segundo valor: ";
 					cin>>b;
 					cout<<endl<<"Ingrese el tercer valor: ";
 					cin>>n;
-					cout<<endl<<"La suma de los numeros que son multiplos son: "+multiplos(a,b,n)<<endl;
-				}
-				break;
+					cout<<endl<<"La suma de los numeros que son multiplos son: "<<multiplos(a,b,n)<<endl;  
+					break;
+				   };
 			case 3:{
 					int num;
 					cout<<"Ingresa un numero menor que 150: ";
 					cin>>num;
-					while(num>150||num<1) {
-						cout<<endl<<"Numero Invalido: ";
+					while((num>150||num<1)&&(num&&2!=0)) {
+						cout<<"Numero Invalido: ";
 						cin>>num;
 					}
 					goldbach(num);
-				}
-				break;
+					break;
+				};
 			case 4:
 				cout<<"Por favor denme buena nota. :)"<<endl;
 				break;
@@ -84,7 +84,6 @@ bool primo(int n){
 			cont++;
 		}
 	}
-	cout<<endl;
 	if (cont==2) {
 		return true;
 	}else{
@@ -93,9 +92,25 @@ bool primo(int n){
 }
 
 int multiplos(int a, int b, int n){
-
+	int suma = 0;
+	for (int i= 1; i <= n ; i++) {
+		if (i%a==0||i%b==0) {
+			suma+=i;
+		}
+	}
+	return suma;
 }
 
 int goldbach(int num){
-
+	for (int i=1 ; i < num ; i++) {
+		if (primo(i)) {
+			for (int j= 1; j < num ; j++) {
+				if (primo(j)) {
+					if (i+j==num) {
+						cout<<i<<"+"<<j<<"="<<num<<endl;
+					}
+				}
+			}
+		}	
+	}
 }
