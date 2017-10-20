@@ -75,7 +75,12 @@ void primos(){
 }
 
 bool primo(int n){
-
+	for (int i=2; i < n ; i++) {
+		if (n%i==0) {
+			return false;
+		}
+	}
+	return true;
 }
 
 int multiplos(int a, int b, int n){
